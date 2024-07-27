@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Payment {
 
 public void processPayement(int amount){
@@ -38,8 +40,47 @@ public class PaymentDemo {
 
 public static void main(String [] args){
 
-Payment p1 = new Payment();
-p1.processPayement(100);
+int amount = 500;
+
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter PaymentType");
+
+String paymentType = sc.next();
+
+Payment payment = getPaymentInstance(paymentType); // Payment payment = new Credicard()
+
+if(payment !=null){
+
+payment.processPayement(amount);
+}else {
+ 
+System.out.println("invalid payment");
+}
+
+}
+
+public static Payment getPaymentInstance(String paymentType){
+
+Payment payment = null;
+
+switch(paymentType){
+
+case "creditCard": 
+		payment = new CreditCard();
+		break;
+case "cheque": 
+		payment = new Cheque();
+		break;
+case "bankTransfer": 
+		payment = new BankTransfer();
+		break;
+default 	: 
+		 System.out.println("UnSupported Paymet Type");
+		break;
+
+
+}
+return payment; // creditcardObject 
 
 }
 }
