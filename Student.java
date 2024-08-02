@@ -1,36 +1,43 @@
-public class Student{
+package hasa;
 
-private int id;
-private String firstName;
-private String lastName;
-private int marks;
- 
-public int getId(){
-return id;
-}
+public class Student {
 
-public void setId(int studentid){
-this.id = studentid;
-}
-public String getFirstName(){
-return firstName;
-}
-public void setFirstName(String stuFirstName){
-this.firstName = stuFirstName;
-}
-
-public String getLastName(){
-return lastName;
-}
-public void setLastName(String stuLastName){
-this.lastName = stuLastName;
-}
-
-public int getMarks(){
-return marks;
-}
-public void setMarks(int stuMarks){
-this.marks = stuMarks;
-}
-
+	private int id;
+	private String name;
+	private double marks;
+	private Address address;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getMarks() {
+		return marks;
+	}
+	public void setMarks(double marks) {
+		this.marks = marks;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", marks=" + marks + ", address=" + address + "]";
+	}
+	
+	
+	
+	
+	
 }
