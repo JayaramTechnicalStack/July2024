@@ -1,11 +1,23 @@
-package hasa;
+package com.org.io;
 
-public class Student {
+import java.io.Serializable;
 
+public class Student implements Serializable {
+
+	
+
+	
+	
+	
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4540269035151293662L;
 	private int id;
-	private String name;
-	private double marks;
-	private Address address;
+	private transient String name;
+	private  transient int  age;
+	private transient String course;
 	
 	public int getId() {
 		return id;
@@ -19,25 +31,24 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getMarks() {
-		return marks;
+	public int getAge() {
+		return age;
 	}
-	public void setMarks(double marks) {
-		this.marks = marks;
+	public void setAge(int age) {
+		this.age = age;
 	}
-	public Address getAddress() {
-		return address;
+	public String getCourse() {
+		return course;
 	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-	@Override
-	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", marks=" + marks + ", address=" + address + "]";
+	public void setCourse(String course) {
+		this.course = course;
 	}
 	
 	
 	
 	
+	
+	
+
 	
 }
